@@ -79,35 +79,38 @@ In the project directory, you can run:
 
 ## Project Structure 📂
 
-├── public/ # Static assets (served directly)
-│ └── vite.svg # Example public asset
-└── src/ # Main source code folder
-├── App.module.css # CSS Modules for the App component
-├── App.tsx # Main application component (layout, state logic)
-├── main.tsx # Application entry point (renders App)
-├── components/ # Reusable React UI components
-│ ├── AddTodoForm/
-│ │ ├── AddTodoForm.module.css
-│ │ └── AddTodoForm.tsx
-│ ├── FilterControls/
-│ │ ├── FilterControls.module.css
-│ │ └── FilterControls.tsx
-│ ├── SortControls/
-│ │ ├── SortControls.module.css
-│ │ └── SortControls.tsx
-│ ├── TodoItem/
-│ │ ├── TodoItem.module.css
-│ │ └── TodoItem.tsx
-│ └── TodoList/
-│ ├── TodoList.module.css
-│ └── TodoList.tsx
-├── reducers/ # Redux/useReducer logic
-│ └── todoReducer.ts
-├── types/ # TypeScript type definitions and interfaces
-│ └── index.ts
-└── utils/ # Utility helper functions
-├── dateUtils.ts
-└── sortUtils.ts
+```plaintext
+react-ts-advanced-todo/
+├── public/                   # Static assets (served directly)
+│   └── vite.svg             # Example public asset
+├── src/                     # Main source code folder
+│   ├── App.module.css       # CSS Modules for App component
+│   ├── App.tsx              # Main application component (layout, state logic)
+│   ├── main.tsx             # Application entry point (renders App)
+│   ├── components/          # Reusable React UI components
+│   │   ├── AddTodoForm/
+│   │   │   ├── AddTodoForm.module.css
+│   │   │   └── AddTodoForm.tsx
+│   │   ├── FilterControls/
+│   │   │   ├── FilterControls.module.css
+│   │   │   └── FilterControls.tsx
+│   │   ├── SortControls/
+│   │   │   ├── SortControls.module.css
+│   │   │   └── SortControls.tsx
+│   │   ├── TodoItem/
+│   │   │   ├── TodoItem.module.css
+│   │   │   └── TodoItem.tsx
+│   │   └── TodoList/
+│   │       ├── TodoList.module.css
+│   │       └── TodoList.tsx
+│   ├── reducers/            # useReducer logic
+│   │   └── todoReducer.ts
+│   ├── types/               # TypeScript types/interfaces
+│   │   └── index.ts
+│   └── utils/               # Utility functions
+│       ├── dateUtils.ts
+│       └── sortUtils.ts
+```
 
 ## Future Enhancements (Possible Evolutions) 🚀
 
