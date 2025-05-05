@@ -1,54 +1,119 @@
-# React + TypeScript + Vite
+# React TS Advanced To-Do List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![CSS Modules](https://img.shields.io/badge/CSS%20Modules-grey?style=for-the-badge)
 
-Currently, two official plugins are available:
+A feature-rich To-Do List application built with React, TypeScript, and Vite, focusing on modern frontend practices and a clean user experience. This project was developed as part of [Mention your course/program, e.g., the 1st Year Computer Engineering Cycle at ENSA Berrechid].
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features ✨
 
-## Expanding the ESLint configuration
+*   **CRUD Operations:** Create, Read, Update (Toggle Complete, Edit Text/Priority/Date), and Delete tasks.
+*   **Persistence:** Tasks are saved to the browser's Local Storage, so they aren't lost on refresh.
+*   **Filtering:** Filter tasks by status (All / Active / Completed).
+*   **Sorting:** Sort tasks by Creation Date, Due Date, or Priority (Ascending/Descending).
+*   **Priorities:** Assign Low, Medium, or High priority to tasks with visual indicators.
+*   **Due Dates:** Set optional due dates for tasks, with visual indication for overdue items.
+*   **Task Count:** Displays the number of active tasks remaining.
+*   **Clear Completed:** Button to easily remove all finished tasks.
+*   **Responsive Design:** Adapts to different screen sizes (Desktop, Tablet, Mobile).
+*   **TypeScript:** Strongly typed codebase for better maintainability and fewer runtime errors.
+*   **CSS Modules:** Scoped CSS for component styling without class name conflicts.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack 🛠️
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+*   **Framework/Library:** React 18+
+*   **Language:** TypeScript
+*   **Build Tool:** Vite
+*   **Styling:** CSS Modules
+*   **State Management:** React Hooks (`useReducer`, `useState`, `useMemo`)
+*   **Unique IDs:** `uuid`
+*   **Date Handling:** `date-fns`
+*   **Icons:** `react-icons`
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Project Setup & Installation ⚙️
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Follow these steps to get the project running locally:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+**Prerequisites:**
+
+*   Node.js (v18 or later recommended)
+*   npm (usually comes with Node.js) or yarn
+*   Git
+
+**Steps:**
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/YounessSHR/react-ts-advanced-todo.git
+    ```
+
+2.  **Navigate into the project directory:**
+    ```bash
+    cd react-ts-advanced-todo
+    ```
+
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    # or if you prefer yarn:
+    # yarn install
+    ```
+
+4.  **Run the development server:**
+    ```bash
+    npm run dev
+    # or
+    # yarn dev
+    ```
+
+5.  **Open your browser:**
+    Navigate to the local URL provided by Vite (usually `http://localhost:5173` or similar).
+
+## Available Scripts
+
+In the project directory, you can run:
+
+*   `npm run dev`: Runs the app in development mode with hot reloading.
+*   `npm run build`: Builds the app for production to the `dist` folder.
+*   `npm run lint`: Lints the codebase using ESLint (if configured).
+*   `npm run preview`: Serves the production build locally for testing.
+
+## Project Structure 📂
+react-ts-advanced-todo/
+├── public/ # Static assets
+├── src/
+│ ├── components/ # Reusable React components (AddTodoForm, TodoList, etc.)
+│ ├── reducers/ # Reducer logic (todoReducer.ts)
+│ ├── types/ # TypeScript type definitions (index.ts)
+│ ├── utils/ # Utility functions (sortUtils.ts)
+│ ├── App.module.css # Main App component styles
+│ ├── App.tsx # Main application component
+│ └── main.tsx # Application entry point
+├── .gitignore # Specifies intentionally untracked files
+├── index.html # Main HTML page
+├── package.json # Project dependencies and scripts
+├── README.md # This file
+├── tsconfig.json # TypeScript compiler options
+├── tsconfig.node.json # TypeScript options for Node environment (Vite config)
+└── vite.config.ts # Vite configuration file
+
+## Future Enhancements (Possible Evolutions) 🚀
+
+*   Backend Integration (Node.js, etc.) for database storage and user accounts.
+*   User Authentication.
+*   Real-time updates (WebSockets).
+*   Drag and Drop reordering.
+*   Subtasks.
+*   Tags/Categories.
+*   Reminders/Notifications.
+*   Unit and Integration Testing (Jest, React Testing Library).
+
+## Authors ✒️
+
+*   **SAHRAOUI Youness** - [YounessSHR](https://github.com/YounessSHR)
+*   **TOUMI Sif Eddine** - [sifeddineftoumi](https://github.com/sifeddineftoumi)
+
+## Acknowledgements 🙏
+
+*   **Pr. AITBACHIR Ilhame** - Pedagogical Supervisor
+
+---
