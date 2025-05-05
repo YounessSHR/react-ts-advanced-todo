@@ -1,0 +1,55 @@
+/* src/App.module.css */
+.appContainer {
+  max-width: 750px; /* Un peu plus large pour les contrôles */
+  margin: 2rem auto;
+  padding: 1rem 2rem; /* Plus de padding horizontal */
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+}
+
+.header h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.controlsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Permet le retour à la ligne */
+  gap: 1rem; /* Espace entre filtres et tri si retour ligne */
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0.75rem 0; /* Augmentation padding vertical */
+  margin-bottom: 1.5rem; /* Plus d'espace avant la liste */
+}
+
+/* Responsive pour le conteneur des contrôles */
+@media (max-width: 650px) {
+  .appContainer {
+      padding: 1rem; /* Réduire padding sur petit écran */
+  }
+  .controlsContainer {
+    flex-direction: column; /* Empiler les contrôles */
+    align-items: stretch; /* Étirer sur la largeur */
+  }
+}
+
+.noTodosMessage {
+    text-align: center;
+    color: #777;
+    margin-top: 2rem;
+    font-style: italic;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    font-size: 0.8em;
+    color: #888;
+}

@@ -1,0 +1,44 @@
+/* src/components/SortControls/SortControls.module.css */
+.sortControls {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem; /* Espace entre éléments */
+  font-size: 0.9em;
+}
+
+.label {
+  /* margin-right: 0.3rem; */ /* Géré par gap */
+  color: #555;
+}
+
+.select {
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+.directionButton {
+  background: none;
+  border: 1px solid #ccc; /* Légère bordure */
+  cursor: pointer;
+  padding: 0.35rem 0.5rem; /* Padding ajusté */
+  font-size: 0.9em; /* Taille icône */
+  border-radius: 4px;
+  line-height: 1; /* Éviter décalage */
+  color: #333;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.directionButton:hover {
+  background-color: #f0f0f0;
+  border-color: #aaa;
+}
+
+/* Ajustement potentiel pour petits écrans */
+@media (max-width: 650px) {
+   .sortControls {
+      /* Prendra la largeur si dans .controlsContainer en colonne */
+      justify-content: flex-start; /* Aligner à gauche */
+   }
+}

@@ -1,0 +1,78 @@
+/* src/components/FilterControls/FilterControls.module.css */
+.filterControls {
+  display: flex;
+  justify-content: space-between; /* Comportement par défaut */
+  align-items: center;
+  flex-wrap: wrap; /* Permettre retour à la ligne */
+  gap: 0.5rem 1rem; /* Espace vertical et horizontal */
+  padding: 0.5rem 0; /* Réduire padding si dans container global */
+  font-size: 0.9em;
+  color: #555;
+}
+
+.activeCount {
+  white-space: nowrap; /* Éviter coupure texte */
+}
+
+.filters {
+  display: flex;
+  gap: 0.5rem; /* Espace entre boutons de filtre */
+}
+
+.filters button {
+  margin: 0; /* Reset margin */
+  padding: 0.3rem 0.7rem;
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: #007bff;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.filters button:hover {
+  background-color: #e7f3ff;
+}
+.filters button.active {
+  border-color: #007bff;
+  background-color: #e7f3ff;
+  font-weight: bold;
+}
+
+.clearButton {
+  background: none;
+  border: none;
+  color: #6c757d;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.95em;
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+.clearButton:hover:not(:disabled) {
+  color: #dc3545;
+  text-decoration: underline;
+}
+.clearButton:disabled {
+    color: #aaa;
+    cursor: not-allowed;
+    text-decoration: none;
+}
+
+/* Adaptation pour écrans plus petits si nécessaire */
+@media (max-width: 650px) {
+  .filterControls {
+    flex-direction: column; /* Empiler */
+    align-items: flex-start; /* Aligner à gauche */
+    gap: 0.8rem; /* Augmenter espace vertical */
+  }
+  .filters {
+      order: 1; /* Mettre les filtres en premier */
+  }
+  .activeCount {
+      order: 2; /* Compteur après */
+  }
+  .clearButton {
+      order: 3; /* Bouton nettoyer en dernier */
+      align-self: flex-end; /* Le pousser à droite */
+  }
+}

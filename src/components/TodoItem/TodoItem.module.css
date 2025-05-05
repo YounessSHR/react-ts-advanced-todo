@@ -1,0 +1,120 @@
+/* src/components/TodoItem/TodoItem.module.css */
+.todoItem {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 0.6rem; /* Plus d'espace vertical */
+  border-bottom: 1px solid #eee;
+  gap: 0.6rem; /* Espacement général */
+  transition: background-color 0.2s ease; /* Feedback au survol */
+}
+.todoItem:hover {
+    background-color: #f5f5f5;
+}
+.todoItem.editing {
+    background-color: #eef7ff; /* Léger fond bleu en mode édition */
+}
+
+.checkbox {
+  cursor: pointer;
+  /* Style personnalisé si souhaité */
+}
+
+.text {
+  flex-grow: 1; /* Prend l'espace disponible */
+  word-break: break-word;
+  cursor: pointer; /* Incite au clic pour le label */
+  padding: 0.2rem 0; /* Marge interne pour le clic */
+}
+
+.completed .text {
+  text-decoration: line-through;
+  color: #999;
+  font-style: italic;
+}
+
+.priorityBadge {
+  font-size: 0.75em;
+  font-weight: bold;
+  padding: 0.2em 0.6em;
+  border-radius: 10px;
+  color: white;
+  white-space: nowrap;
+  text-align: center;
+  min-width: 18px; /* Pour que même une lettre soit bien centrée */
+}
+
+/* Styles spécifiques aux priorités (basé sur classe du li) */
+.priorityLow .priorityBadge { background-color: #6c757d; } /* Gris pour faible */
+.priorityMedium .priorityBadge { background-color: #ffc107; color: #333; } /* Jaune pour moyen */
+.priorityHigh .priorityBadge { background-color: #dc3545; } /* Rouge pour haute */
+
+.dueDate {
+  font-size: 0.8em;
+  color: #555;
+  white-space: nowrap;
+  display: flex; /* Pour aligner icône et texte */
+  align-items: center;
+  gap: 0.3em;
+}
+
+.overdue .dueDate {
+  color: #dc3545;
+  font-weight: bold;
+}
+.overdueIcon {
+    color: #dc3545;
+    margin-left: 0.2em;
+}
+
+/* Styles communs boutons d'action */
+.actionButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem; /* Zone de clic un peu plus grande */
+  font-size: 1em;
+  color: #555; /* Couleur par défaut */
+  transition: color 0.2s ease;
+  line-height: 1; /* Éviter décalage vertical */
+}
+.actionButton:hover {
+  color: #000; /* Plus foncé au survol */
+}
+
+/* Couleurs spécifiques boutons */
+.editButton:hover { color: #0056b3; }
+.deleteButton:hover { color: #c82333; }
+.saveButton { color: #218838; } /* Vert sauvegarde */
+.saveButton:hover { color: #1e7e34; }
+.cancelButton { color: #5a6268; } /* Gris annuler */
+.cancelButton:hover { color: #343a40; }
+
+
+/* Styles pour le mode édition */
+.editInput {
+  flex-grow: 1;
+  padding: 0.5rem;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+.editSelect, .editDate {
+  padding: 0.5rem;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+/* Ajustements potentiels pour petits écrans si nécessaire */
+@media (max-width: 650px) {
+    .todoItem {
+        gap: 0.4rem;
+        padding: 0.6rem 0.4rem;
+    }
+    .dueDate {
+        font-size: 0.75em;
+    }
+    /* Cacher priorité/date en mode édition si trop chargé ? */
+    .editing .priorityBadge, .editing .dueDate {
+        /* display: none; */ /* Option si besoin d'espace */
+    }
+}
