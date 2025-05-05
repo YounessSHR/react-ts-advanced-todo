@@ -78,23 +78,36 @@ In the project directory, you can run:
 *   `npm run preview`: Serves the production build locally for testing.
 
 ## Project Structure 📂
-react-ts-advanced-todo/
-├── public/ # Static assets
-├── src/
-│ ├── components/ # Reusable React components (AddTodoForm, TodoList, etc.)
-│ ├── reducers/ # Reducer logic (todoReducer.ts)
-│ ├── types/ # TypeScript type definitions (index.ts)
-│ ├── utils/ # Utility functions (sortUtils.ts)
-│ ├── App.module.css # Main App component styles
-│ ├── App.tsx # Main application component
-│ └── main.tsx # Application entry point
-├── .gitignore # Specifies intentionally untracked files
-├── index.html # Main HTML page
-├── package.json # Project dependencies and scripts
-├── README.md # This file
-├── tsconfig.json # TypeScript compiler options
-├── tsconfig.node.json # TypeScript options for Node environment (Vite config)
-└── vite.config.ts # Vite configuration file
+
+├── public/ # Static assets (served directly)
+│ └── vite.svg # Example public asset
+└── src/ # Main source code folder
+├── App.module.css # CSS Modules for the App component
+├── App.tsx # Main application component (layout, state logic)
+├── main.tsx # Application entry point (renders App)
+├── components/ # Reusable React UI components
+│ ├── AddTodoForm/
+│ │ ├── AddTodoForm.module.css
+│ │ └── AddTodoForm.tsx
+│ ├── FilterControls/
+│ │ ├── FilterControls.module.css
+│ │ └── FilterControls.tsx
+│ ├── SortControls/
+│ │ ├── SortControls.module.css
+│ │ └── SortControls.tsx
+│ ├── TodoItem/
+│ │ ├── TodoItem.module.css
+│ │ └── TodoItem.tsx
+│ └── TodoList/
+│ ├── TodoList.module.css
+│ └── TodoList.tsx
+├── reducers/ # Redux/useReducer logic
+│ └── todoReducer.ts
+├── types/ # TypeScript type definitions and interfaces
+│ └── index.ts
+└── utils/ # Utility helper functions
+├── dateUtils.ts
+└── sortUtils.ts
 
 ## Future Enhancements (Possible Evolutions) 🚀
 
